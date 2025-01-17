@@ -1,0 +1,17 @@
+{
+    "require": {
+        "robmorgan/phinx": "^0.16.5"
+    },
+    "scripts": {
+        "db:create": "./vendor/bin/phinx create --",
+        "db:migrate": "./vendor/bin/phinx migrate",
+        "db:migrate:refresh": "composer run db:rollback:reset && ./vendor/bin/phinx migrate",
+        "db:rollback": "./vendor/bin/phinx rollback",
+        "db:rollback:reset": "./vendor/bin/phinx rollback -t 0",
+        "db:status": "./vendor/bin/phinx status",
+        "db:migrate:valid": "./vendor/bin/phinx migrate --dry-run",
+        "db:rollback:valid": "./vendor/bin/phinx rollback --dry-run",
+        "db:seed:create": "./vendor/bin/phinx seed:create --",
+        "db:seed": "./vendor/bin/phinx seed:run --"
+    }
+}
