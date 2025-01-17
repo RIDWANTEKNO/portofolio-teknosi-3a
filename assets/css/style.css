@@ -189,6 +189,7 @@ header {
     text-align: center;
     font-size: 60px;
     padding-bottom: 70px;
+    margin-top: 3rem;
 }
 .sub-title span{
     color: #0ef;
@@ -641,8 +642,7 @@ section{
     align-items: center;
     gap: 3rem;
     padding-left: 30px;
-    padding-top: 100px;
-    margin-top: 130px;
+    margin-top: 3rem;
 }
 .contact-text h2{
     font-size: 90px;
