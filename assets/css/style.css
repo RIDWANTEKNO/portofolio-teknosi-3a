@@ -145,7 +145,6 @@ header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    gap: 1.5rem;
 }
 .about-img img{
     padding-bottom: 20%;
@@ -154,8 +153,15 @@ header {
     width: 100%;
     border-radius: 8px;
 }
+
+.about-text{
+    padding-right: 3rem;
+    text-align: justify;
+}
+
 .about-text h2{
     font-size: 60px;
+    margin-bottom: 1rem
 
 }
 .about-text h2 span{
@@ -172,7 +178,6 @@ header {
     color: aliceblue;
     font-size: 20px;
     line-height: 1.4;
-    margin-bottom: 4rem;
 }
 #services{
     color: aliceblue;
@@ -415,7 +420,6 @@ section{
 }
 .radial-bars .radial-bar .progress-bar{
     stroke-width: 10;
-    atop-color: black;
     fill: transparent;
     stroke-dasharray : 502;
     stroke-dashoffset: 502;
@@ -425,7 +429,7 @@ section{
 }
 @keyframes animate-bar{
     100%{
-        stroke-dashoffset -1;
+        stroke-dashoffset: -1;
     }
 }
 .path {
@@ -656,7 +660,7 @@ section{
     font-size: 20px;
 }
 .contact-text p{
-    color: rgb(177, 177, 177);
+    color: rgb(234, 234, 234);
     font-size: 20px;
     line-height: 30px;
     margin-bottom: 2rem;
@@ -710,6 +714,7 @@ section{
 }
 .contact-form form{
     position: relative;
+    padding-right: 3rem;
 
 }
 .contact-form form input, .contact-form form textarea{
@@ -717,7 +722,7 @@ section{
     outline: none;
     width: 100%;
     padding: 18px;
-    background: #555557;
+    background: #e0e0e0;
     color: #000;
     font-size: 1rem;
     font-weight: 600;

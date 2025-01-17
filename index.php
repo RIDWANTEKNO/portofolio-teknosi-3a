@@ -12,8 +12,8 @@ $sql = $conn->query("INSERT INTO pengunjung_per_hari (tanggal, total_pengunjung,
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="assets/css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </head>
 
@@ -79,39 +79,34 @@ $sql = $conn->query("INSERT INTO pengunjung_per_hari (tanggal, total_pengunjung,
         $foto = 'admin/' . $about_me_data['foto']; // Jika ada foto di database
     }
     ?>
+    
     <section class="about" id="about">
         <div class="about-container">
             <!-- Kotak Gambar -->
-            <div class="about-img-box">
-                <img src="<?= $foto ?>" alt="About Me Image" width="45px">
+            <img src="<?= $foto ?>" alt="About Me Image" width="400px" style="border-radius: 50px;">
+        </div>
+        <!-- Kotak Teks -->
+        <div class="about-text">
+            <?php if ($about_me_data): ?>
+                <style>
+                    p {
+                        margin-bottom: 0;
+                    }
+                </style>
+                <h2><?= $about_me_data['nama'] ?></h2>
+                <?= nl2br($about_me_data['konten']) ?>
+            <?php endif; ?>
+            <div class="home-sci">
+                <?php
+                $query_home_social_media = mysqli_query($conn, "SELECT * FROM home_sosial_media");
+                $home_social_media = mysqli_fetch_all($query_home_social_media, MYSQLI_ASSOC);
+                foreach ($home_social_media as $social_media) { ?>
+                    <a href="<?= $social_media['link'] ?>" style="--i:7"><i class='bx <?= $social_media['bx_logo'] ?>'></i></a>
+                <?php }
+                ?>
             </div>
-            <!-- Kotak Teks -->
-            <div class="about-info-box">
-                <?php if ($about_me_data): ?>
-                    <h3><?= $about_me_data['nama'] ?></h3>
-                    <p><?= nl2br($about_me_data['konten']) ?></p>
-                    <script>
-                        var typed = new Typed(".text", {
-                            strings: <?= json_encode(explode(';', $home['tentang_saya'])) ?>,
-                            typeSpeed: 100,
-                            backSpeed: 100,
-                            backDelay: 1000,
-                            loop: true
-                        });
-                    </script>
-                <?php endif; ?>
-                <div class="home-sci">
-                    <?php
-                    $query_home_social_media = mysqli_query($conn, "SELECT * FROM home_sosial_media");
-                    $home_social_media = mysqli_fetch_all($query_home_social_media, MYSQLI_ASSOC);
-                    foreach ($home_social_media as $social_media) { ?>
-                        <a href="<?= $social_media['link'] ?>" style="--i:7"><i class='bx <?= $social_media['bx_logo'] ?>'></i></a>
-                    <?php }
-                    ?>
-                </div>
-                <div class="about-text">
-                    <a href="#contact" class="btn-box">More About Me</a>
-                </div>
+            <div class="about-text">
+                <a href="#contact" class="btn-box">More About Me</a>
             </div>
         </div>
     </section>
@@ -173,8 +168,6 @@ $sql = $conn->query("INSERT INTO pengunjung_per_hari (tanggal, total_pengunjung,
             }
         }
     </style>
-
-
 
     <!-- Skills Section -->
     <h1 class="sub-title">My <span>Skills</span></h1>
