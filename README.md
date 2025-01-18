@@ -10,4 +10,7 @@ Project ini merupakan tugas pembuatan portofolio dengan CMS. Bahasa pemograman y
 4. Untuk menjalankannya buka browser lalu ketikkan url ``http://localhost/portofolio-teknosi-3a``
 5. Untuk masuk kedalam admin panel (CMS) masukkan url `http://localhost/portofolio-teknosi-3a/admin/login.php` dengan username dan password: admin
 
-UNIVERSITAS NURDIN HAMZAH
+cara  ngoding biar dak lupa
+-git add .
+-git commit -m"update cara"
+-git push
